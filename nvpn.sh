@@ -5,11 +5,9 @@
 #====================================#
 
 clear
-splash
 if [ "$EUID" -ne 0 ]
   then
   echo "Only a non-root user can activate and de-activate NordVPN"
-  exit
 fi
 
 #====================================#
@@ -88,12 +86,22 @@ select opt in "${options[@]}" ; do
 #====================================#
 
 	"Activate NordVPN")
+		clear
+		splash
+		echo "Attempting to connect NordVPN"
 		nordvpn connect
+		sleep 0.03
+		clear
 	break
 	;;
 
 	"DeActivate NordVPN")
+		clear
+		splash
+		echo "Attempting to disconnect NordVPN"
 		nordvpn disconnect
+		sleep 0.03
+		clear
 	break
 	;;
 
