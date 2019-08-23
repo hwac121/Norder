@@ -90,7 +90,7 @@ select opt in "${options[@]}" ; do
 		splash
 		echo "Attempting to connect NordVPN"
 		nordvpn connect
-		sleep 0.03
+		sleep 10
 		clear
 	break
 	;;
@@ -100,7 +100,7 @@ select opt in "${options[@]}" ; do
 		splash
 		echo "Attempting to disconnect NordVPN"
 		nordvpn disconnect
-		sleep 0.03
+		sleep 5
 		clear
 	break
 	;;
